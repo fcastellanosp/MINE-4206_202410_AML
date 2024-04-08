@@ -15,10 +15,19 @@
 
 ## Laboratorio 2
 Sesión 1. Regresión Logística y SVM
+* Construir un modelo de clasificación.
+* Determinar las métricas de los modelos de clasificación.
+* Establecer la selección del modelo basado en métricas y gráficas.
 Sesión 2. Árboles, Random Forest
+* Construir un modelo de clasificación basado en árboles aleatorios.
+* Determinar las métricas del modelo de clasificación.
+* Establecer la selección del modelo basado en métricas y gráficas.
 
 ## Laboratorio 3
 Redes neuronales
+* Realizar el análisis y limpieza de textos.
+* Explorar las diferentes técnicas de transformación de datos no estructurados.
+* Establecer el mejor modelo basado en una red neuronal.
 
 ## Laboratorio 4
 Sesión 1. Agrupación con k-medias
