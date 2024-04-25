@@ -112,11 +112,13 @@ class TextPreprocessing:
         words = ' '.join(map(str, words))
         return words
 
-    def transform(self, x, n_components):
+    """La función recibe el tfidf y el pca con la información almacenada desde el entrenamiento"""
+    def transform(self, x, tfidf, pca):
         x_test_new = self.processing(x)
 
-        tfidf_v = TfidfVectorizer(max_features=n_components)
-        tfidf = tfidf_v.fit_transform([x_test_new])
-        print(f"El tamaño de TF-IDF es: {tfidf.shape}")
+        x_tfidf = tfidf.transform([x_test_new])
+        print(f"El tamaño de TF-IDF es: {x_tfidf.shape}")
+        x_pca = pca.transform(x_tfidf)
+        print(f"El tamaño del PCA: {x_pca.shape}")
 
-        return tfidf.todense()
+        return x_pca
