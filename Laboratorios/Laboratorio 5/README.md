@@ -1,0 +1,1 @@
+La información del código fuente del proyecto, se encuentra en la raíz del repositorio, en la carpeta "fcastellanosp\MINE-4206_202410_AML\Proyecto"
