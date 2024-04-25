@@ -12,8 +12,8 @@ class ModelController:
 
     def __init__(self):
         self.model_path = osp.join(Definitions.ROOT_DIR, "resources/models", "text_classifier.h5")
-        self.tfidf_path = osp.join(Definitions.ROOT_DIR, "resources/models", "train_tfidf.joblib")
-        self.pca_path = osp.join(Definitions.ROOT_DIR, "resources/models", "train_pca.joblib")
+        self.tfidf_path = osp.join(Definitions.ROOT_DIR, "resources/models", "trained_tfidf.joblib")
+        self.pca_path = osp.join(Definitions.ROOT_DIR, "resources/models", "trained_pca.joblib")
 
         self.model = load_model(self.model_path)
         self.tfidf = load(self.tfidf_path)
@@ -23,8 +23,9 @@ class ModelController:
 
     def predict(self, text):
         print("predict ->")
-        # Debemos preparar la información de la misma forma como preparamos el modelo
+
         x = self.t_processing.transform([text], self.tfidf, self.pca)
+        """ Prediction probabilities """
         y_pred_prob = self.model.predict(x, verbose=0)
         df = pd.DataFrame(self.get_categories(), columns=["Category"])
         df['Probability'] = y_pred_prob.reshape(-1, 1)

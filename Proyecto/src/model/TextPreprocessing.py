@@ -101,24 +101,21 @@ class TextPreprocessing:
         return words
 
     def processing(self, words):
-        print("processing ->")
-        print(words)
         words = self.preproccesing(words)
-        #words = contractions.fix(words)
         words = [contractions.fix(text) for text in words]
         words = [word_tokenize(text) for text in words]
         words = [self.stem_and_lemmatize(text) for text in words]
-        # words = self.stem_words(words)
         words = ' '.join(map(str, words))
         return words
 
-    """La función recibe el tfidf y el pca con la información almacenada desde el entrenamiento"""
+    """Receives the TF-IDF and PCA as we trained before"""
     def transform(self, x, tfidf, pca):
         x_test_new = self.processing(x)
 
         x_tfidf = tfidf.transform([x_test_new])
-        print(f"El tamaño de TF-IDF es: {x_tfidf.shape}")
+        print(f"TF-IDF shape: {x_tfidf.shape}")
+
         x_pca = pca.transform(x_tfidf)
-        print(f"El tamaño del PCA: {x_pca.shape}")
+        print(f"PCA shape: {x_pca.shape}")
 
         return x_pca
