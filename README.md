@@ -34,4 +34,5 @@ Sesión 1. Agrupación con k-medias
 Sesión 2. Agrupación con otros algoritmos
 
 ## Laboratorio 5
-Detección de anomalías con autoencoders.
+Sesión 1. Despliegue del taller 3 en una aplicación web.
+Sesión 2: Detección de anomalías con autoencoders.
