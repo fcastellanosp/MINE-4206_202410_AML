@@ -19,8 +19,6 @@ class ModelController:
         self.tfidf = load(self.tfidf_path)
         self.pca = load(self.pca_path)
 
-        # El número de componentes con el que fue entrenado el modelo
-        self.n_components = 50
         self.t_processing = TextPreprocessing()
 
     def predict(self, text):
